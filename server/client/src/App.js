@@ -7,14 +7,14 @@ import { setCurrentUser, logoutUser } from "./redux/actions/authActions";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
-import './App.css';
+import './App.scss';
 
-import Navbar from "./components/layout/Navbar";
-import Landing from "./components/layout/Landing";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
-import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/dashboard/Dashboard";
+import Navbar from "./components/layout/navbar/navbar.component";
+import Landing from "./components/layout/landing/landing.component";
+import Register from "./components/auth/register/register.component";
+import Login from "./components/auth/login/login.component";
+import PrivateRoute from "./components/private-route/private-route.component";
+import Dashboard from "./components/dashboard/dashboard.component";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {

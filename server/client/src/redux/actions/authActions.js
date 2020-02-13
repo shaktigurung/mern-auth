@@ -6,6 +6,7 @@ import {
   SET_CURRENT_USER,
   USER_LOADING
 } from "./types";
+
 // Register User
 export const registerUser = (userData, history) => dispatch => {
   axios
@@ -18,13 +19,14 @@ export const registerUser = (userData, history) => dispatch => {
       })
     );
 };
+
 // Login - get user token
 export const loginUser = userData => dispatch => {
   axios
     .post("/api/users/login", userData)
     .then(res => {
       // Save to localStorage
-// Set token to localStorage
+      // Set token to localStorage
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
       // Set token to Auth header
@@ -40,7 +42,7 @@ export const loginUser = userData => dispatch => {
         payload: err.response.data
       })
     );
-};
+};  
 // Set logged in user
 export const setCurrentUser = decoded => {
   return {
@@ -48,12 +50,14 @@ export const setCurrentUser = decoded => {
     payload: decoded
   };
 };
+
 // User loading
 export const setUserLoading = () => {
   return {
     type: USER_LOADING
   };
 };
+
 // Log user out
 export const logoutUser = () => dispatch => {
   // Remove token from local storage
