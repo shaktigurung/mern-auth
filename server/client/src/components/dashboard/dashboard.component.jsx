@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../redux/actions/authActions";
 
-//import HomePage from '../../pages/home/home-page.component';
+import HomePage from '../../pages/home/home-page.component';
 
 class Dashboard extends Component {
 
@@ -38,6 +38,9 @@ class Dashboard extends Component {
                     Logout
                 </button>
                 </div>
+            </div>
+            <div className="row">
+                <HomePage />
             </div>
         </div>
     );
