@@ -1,5 +1,5 @@
 import React from 'react';
-import youtube from './../../api/youtube';
+import youtube from './../../api/youtube.js'
 
 import SearchBar from './../../components/search-bar/search-bar.component';
 import VideoList from './../../components/video-list/video-list.component';
@@ -8,13 +8,14 @@ import VideoDetail from './../../components/video-detail/video-detail.component'
 
 class HomePage extends React.Component {
   
-  state={videos: [], selectedVideo: null};
+  state={videos: [], selectedVideo: null };
 
   componentDidMount(){
     this.onTermSubmit('buildings');
   }
 
   onTermSubmit = async (term) => {
+    console.log(term);
     const response = await youtube.get('/search', {
       params: {
         q: term
